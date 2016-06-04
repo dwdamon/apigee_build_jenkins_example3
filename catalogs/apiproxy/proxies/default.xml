@@ -16,7 +16,28 @@
             </Step>
         </Response>
     </PreFlow>
-    <Flows/>
+    <Flows>
+        <Flow name="Catalogs">
+            <Description/>
+            <Request>
+                <Step>
+                <Name>Catalog-Response</Name>
+            </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/catalogs") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="Computers">
+            <Description/>
+            <Request>
+                <Step>
+                <Name>Computer-Response</Name>
+            </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/computers") and (request.verb = "GET")</Condition>
+        </Flow>
+    </Flows>
     <PostFlow name="PostFlow">
         <Request/>
         <Response/>
